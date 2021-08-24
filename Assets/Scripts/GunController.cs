@@ -58,13 +58,14 @@ public class GunController : MonoBehaviour
     }*/
     private void FireGun()
     {
-       
+
         //particleSyste.transform.position = particlePoint.position;
         //particleSyste.Play();
 
-        Debug.DrawRay(firePoint.position, firePoint.forward*50f, Color.red,2f);
+        //Debug.DrawRay(firePoint.position, firePoint.forward*50f, Color.red,2f);
         //Ray ray = new Ray(firePoint.position, firePoint.forward);
-        Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
+        //Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
+        Ray ray = new Ray(firePoint.position, firePoint.right);
         Debug.DrawRay(ray.origin, ray.direction * 30f, Color.blue, 2f);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100f))
