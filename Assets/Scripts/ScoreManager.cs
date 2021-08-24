@@ -7,16 +7,16 @@ public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
     public int health = 0;
-    public Text ScoreText;
-    public Text HealthText;
+    public Text ScoreUI;
+    public Text HealthUI;
     public void CoinScore()
     {
         score++;
-        ScoreText.text = "Score: " + score;
+        ScoreUI.text = "Score: " + score;
     }
     public void BottleScore()
     {
         health = health + 5;
-        HealthText.text = "Health: " + health;
+        HealthUI.text = "Health: " + health;
     }
 }
