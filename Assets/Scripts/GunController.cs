@@ -46,7 +46,7 @@ public class GunController : MonoBehaviour
         }
         if(TotalEnemies == 0)
         {
-            SceneManager.LoadScene(2);
+            HelicopterSpawn.helicinstance.finishedGame = true;
         }
     }
 

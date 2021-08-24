@@ -7,8 +7,15 @@ public class Health : MonoBehaviour
 {
     [SerializeField]
     int startHealth = 5;
-    [SerializeField]
-    int currentHealth;
+    public int currentHealth;
+    public GameObject DeathEffect;
+
+    public static Health healthinstance;
+    private void Start()
+    {
+        healthinstance = this;
+    }
+
     private void OnEnable()
     {
         currentHealth = startHealth;
@@ -25,6 +32,7 @@ public class Health : MonoBehaviour
     {
         //gameObject.SetActive(false);
         Destroy(this.gameObject);
+        Instantiate(DeathEffect, this.transform);
         if (this.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(2);

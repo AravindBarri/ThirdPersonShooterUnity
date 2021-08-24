@@ -14,6 +14,10 @@ public class ScoreManager : MonoBehaviour
     {
         Scoreinstance = this;
     }
+    public void initialHealth(int value)
+    {
+        HealthUI.text = "Health: " + value;
+    }
     public void CoinScore()
     {
         score++;
@@ -21,7 +25,8 @@ public class ScoreManager : MonoBehaviour
     }
     public void BottleScore()
     {
-        health = health + 5;
+        health =  5;
+        Health.healthinstance.currentHealth = health;
         HealthUI.text = "Health: " + health;
     }
     public void EnemyKillScore()
