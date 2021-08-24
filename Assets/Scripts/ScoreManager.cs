@@ -9,6 +9,11 @@ public class ScoreManager : MonoBehaviour
     public int health = 0;
     public Text ScoreUI;
     public Text HealthUI;
+    public static ScoreManager Scoreinstance;
+    private void Start()
+    {
+        Scoreinstance = this;
+    }
     public void CoinScore()
     {
         score++;
@@ -18,5 +23,10 @@ public class ScoreManager : MonoBehaviour
     {
         health = health + 5;
         HealthUI.text = "Health: " + health;
+    }
+    public void EnemyKillScore()
+    {
+        score+=5;
+        ScoreUI.text = "Score: " + score;
     }
 }

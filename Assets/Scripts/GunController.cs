@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GunController : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class GunController : MonoBehaviour
     public ParticleSystem particleSyste;
     //public GameObject bulletPrefab;
     //[SerializeField] float bulletSpeed;
-   // AudioSource audioSource;
-   // public AudioClip audioClip;
+    // AudioSource audioSource;
+    // public AudioClip audioClip;
+    [SerializeField]
+    int TotalEnemies = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,10 @@ public class GunController : MonoBehaviour
                 particleSyste.Play();
             }
         }
+        if(TotalEnemies == 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     /*public void BulletSpawn()
@@ -62,12 +69,17 @@ public class GunController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            Debug.Log(hit.collider.gameObject.tag);
             var enemyhealth = hit.collider.gameObject.GetComponent<Health>();
             if (enemyhealth != null)
             {
                 print("Take Damage");
                 enemyhealth.TakeDamage(damage);
+            }
+            if(hit.collider.gameObject.tag == "Enemy")
+            {
+                TotalEnemies--;
+                ScoreManager.Scoreinstance.EnemyKillScore();
             }
         }
     }

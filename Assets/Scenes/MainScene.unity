@@ -830,7 +830,6 @@ MonoBehaviour:
   backSpeed: 5
   turnSpeed: 100
   ScoreM: {fileID: 597560365}
-  healthP: 0
 --- !u!114 &561370029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,6 +847,7 @@ MonoBehaviour:
   timer: 0
   firePoint: {fileID: 1129348723}
   particleSyste: {fileID: 1038374647}
+  TotalEnemies: 4
 --- !u!114 &561370030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1322,7 +1322,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852792178}
-  m_LocalRotation: {x: 0.058885727, y: 0.009602551, z: -0.0005664624, w: 0.9982184}
+  m_LocalRotation: {x: 0.058885727, y: 0.009602547, z: -0.0005664621, w: 0.9982184}
   m_LocalPosition: {x: -138.94002, y: 40.287827, z: 537.02045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6699,7 +6699,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543542815}
-  m_LocalRotation: {x: 0.058885727, y: 0.009602551, z: -0.0005664624, w: 0.9982184}
+  m_LocalRotation: {x: 0.058885727, y: 0.009602547, z: -0.0005664621, w: 0.9982184}
   m_LocalPosition: {x: -138.94002, y: 40.287827, z: 537.02045}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []

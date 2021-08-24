@@ -10,6 +10,6 @@ public class FinalScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: " + PlayerMovement.instance.healthP.ToString();
+        scoreText.text = "Final Score: " + ScoreManager.Scoreinstance.score.ToString();
     }
 }

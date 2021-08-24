@@ -12,16 +12,13 @@ public class PlayerMovement : MonoBehaviour
     ScoreManager score;
     public GameObject ScoreM;
 
-    public int healthP = 0;
 
-    public static PlayerMovement instance;
-    
+   
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         score = ScoreM.GetComponent<ScoreManager>();
-        instance = this;
     }
     void Update()
     {
@@ -37,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
             //audioSource.clip = audioClip;
             //audioSource.Play();
         }
-
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -46,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
             print("Bottle");
             other.gameObject.transform.parent.gameObject.SetActive(false);
             score.BottleScore();
-            healthP = score.health;
         }
         if (other.gameObject.tag == "Coin")
         {

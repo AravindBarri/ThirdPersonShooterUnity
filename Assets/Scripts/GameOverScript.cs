@@ -11,6 +11,6 @@ public class GameOverScript : MonoBehaviour
     }
     public void Quit()
     {
-        Debug.Log("Quit");
+        SceneManager.LoadScene(0);
     }
 }
