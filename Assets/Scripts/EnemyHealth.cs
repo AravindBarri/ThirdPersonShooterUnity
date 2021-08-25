@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     int startHealth = 5;
     public int currentHealth;
     public GameObject DeathEffect;
-    public static Health healthinstance;
+    public static EnemyHealth Enemyhealthinstance;
     private void Start()
     {
-        healthinstance = this;
+        Enemyhealthinstance = this;
     }
 
     private void OnEnable()
@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        ScoreManager.Scoreinstance.updateHealth(currentHealth);
+        //ScoreManager.Scoreinstance.updateHealth(currentHealth);
         if (currentHealth <= 0)
         {
             Die();

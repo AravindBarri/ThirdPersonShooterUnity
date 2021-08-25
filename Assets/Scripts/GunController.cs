@@ -71,7 +71,7 @@ public class GunController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 100f))
         {
             Debug.Log(hit.collider.gameObject.tag);
-            var enemyhealth = hit.collider.gameObject.GetComponent<Health>();
+            var enemyhealth = hit.collider.gameObject.GetComponent<EnemyHealth>();
             if (enemyhealth != null)
             {
                 print("Take Damage");

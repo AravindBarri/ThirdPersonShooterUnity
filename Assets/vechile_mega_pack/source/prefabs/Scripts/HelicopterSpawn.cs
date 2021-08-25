@@ -25,9 +25,10 @@ public class HelicopterSpawn : MonoBehaviour
             helicopterRigidbody.velocity = new Vector3(0, -2, 0);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(2);
         }

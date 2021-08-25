@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
-    public int health = 0;
+    public int health = 5;
     public Text ScoreUI;
     public Text HealthUI;
     public static ScoreManager Scoreinstance;
@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     {
         Scoreinstance = this;
     }
-    public void initialHealth(int value)
+    public void updateHealth(int value)
     {
         HealthUI.text = "Health: " + value;
     }
